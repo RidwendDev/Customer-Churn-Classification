@@ -57,9 +57,21 @@ Kumpulan data mencakup informasi tentang:
 * Informasi akun pelanggan - seperti contract, payment method, paperless billing, monthly charges, and total charges
 * Info demografis tentang pelanggan – gender, tenure, lalu Partner, Dependents
 
-Kita akan melihat adakah outlier pada data-data numeriknya
-<image src=''>
+Kita akan mengambil salah satu sampel data numeriknya, di program akan ditampilkan tidak ada nilai yang outlier
+<image src='https://github.com/RidwendDev/Customer-Churn-Classification/blob/main/Visualizations/out.png?raw=true'>
     
+## Analisis Univariat dan Multivariat
+Baik kita akan mulai fokus menganalisis korelasi data pada feature-feature baik numerik maupun kategorik terhadap target kita(Churn). Untuk lebih lengkapnya dapat dilihat pada kode programnya, karena disini hanya akan menggambarkan sedikit pattern yang cukup menarik.
+   <img src='https://github.com/RidwendDev/Customer-Churn-Classification/blob/main/Visualizations/corr%20numer.png?raw=true'>
+   <img src='https://github.com/RidwendDev/Customer-Churn-Classification/blob/main/Visualizations/paymet.png?raw=true'>
+   * Dapat dilihat dari grafik customer yang churn(pindah) dengan tingkat presentase terttnggi adalah yang menggunakan Elektronik check sebagai Metode Pembayaran.
+   * Pelanggan yang memilih mailed check,bank transfer, credit card(automatic) sebagai Metode Pembayaran cenderung tidak pindah.
+   
+   <img src='https://github.com/RidwendDev/Customer-Churn-Classification/blob/main/Visualizations/depen.png?raw=true'>
+
+   <img src='https://github.com/RidwendDev/Customer-Churn-Classification/blob/main/Visualizations/partner.png?raw=true'>
+   * Pelanggan yang tidak memiliki dependents(tanggungan) cenderungnya akan churn
+   * Pelanggan yang tidak memiliki partners(pasangan) cenderungnya akan churn
     
 
 
