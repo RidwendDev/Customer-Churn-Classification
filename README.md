@@ -157,8 +157,7 @@ Confusion matrix testing model terbaik:<br>
    Dari data terlihat bahwasannya model mampu memprediksi data dengan menghasilkan akurasi sebesar 80%, dengan detil tebakan churn yang sebenernya benar churn  adalah 185, tebakan tidak churn yang sebenernya tidak churn adalah 948, tebakan tidak churn yang sebenernya benar churn adalah 189 dan tebakan churn yang sebenernya tidak churn adalah 87.
    
 ## Referensi
-   * Perdana, D., 2022. Pengertian dan Implikasi Customer Churn Rate Pada Bisnis Perusahaan. [online] Bisnia.com. Available at: <https://www.bisnia.com/pengertian-dan-implikasi-customer-churn-rate-pada-bisnis-perusahaan/> [Accessed 5 September 2022].
-   * Afifah, L., 2022. Apa itu Confusion Matrix di Machine Learning? - IlmudataPy. [online] IlmudataPy. Available at: <https://ilmudatapy.com/apa-itu-confusion-matrix/> [Accessed 5 September 2022].
+   * Kavitha, V., Kumar, G. H., Kumar, S. M., & Harish, M. (2020). Churn prediction of customer in telecom industry using machine learning algorithms. International Journal of Engineering Research and Technology (IJERT), 9(5), 181–184. https://doi.org/10.17577/ijertv9is050022
    
    
    
