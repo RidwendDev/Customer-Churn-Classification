@@ -37,7 +37,16 @@ Solusi yang dapat diterapkan agar goals diatas terpenuhi adalah sebagai berikut:
     * Random Forest Classifier
     
 ## **Data Understanding**
-Dataset yang di gunakan pada proyek machine learning ini merupakan dataset churn dari perusahaan telekomunikasi. Dataset tersebut dapat di unduh di website kaggle: [Telco Customer Churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn).
+Dataset yang digunakan pada proyek ini yaitu dataset lengkap dengan riwayat customer **Churn** dari suatu perusahaan telekomunikasi, informasi lebih lanjut mengenai dataset tersebut dapat lihat pada tabel berikut:
+
+  | Jenis                   | Keterangan                                                                              |
+  | ----------------------- | --------------------------------------------------------------------------------------- |
+  | Sumber                  | Dataset: [Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn) |
+  | Dataset Owner           | IBM Samples Dataset                                                                           |
+  | Lisensi                 | Data files © Original Authors                                                                        |
+  | Kategori                | telecommunication, Finance                                                                     |
+  | Usability               | 8.82                                                                                       |
+  | Jenis dan Ukuran Berkas | CSV (176 kB)                                                                           |
 
 Setelah dilakukan analisa pada data, didapatkan informasi bahwa:
 
