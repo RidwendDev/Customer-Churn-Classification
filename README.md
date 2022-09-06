@@ -1,7 +1,7 @@
 # Project Machine Learning Expert - Ridwan Akmal
 ## **Domain Proyek**
 ### **Latar Belakang** 
-Dalam dunia bisnis, mendapatkan pelanggan baru cukuplah sulit lagipun menghabiskan biaya yang lebih mahal daripada mempertahankan pelanggan yang sudah ada. Mengapa? karena ketika mencari pelanggan baru maka perlu menghabiskan banyak  waktu dan biaya lagi untuk memikat hati calon pelanggan yang tentu saja belum pasti akan membuahkan hasil. Dalam penelitian yang dilakukan oleh Frederick Reichheld dari Bain & Company yang menunjukkan peningkatan tingkat penahanan pelanggan sebesar 5% meningkatkan keuntungan sebesar 25% hingga 95%. Sederhananya mempertahankan pelanggan yang tepat itu berharga. Salah satu metrik utama dalam memahami apakah perusahaan mempertahankan pelanggan adalah tingkat customer churn rate. Churn rate secara definisi diartikan sebagai hitungan persentase pelanggan atau pembeli yang tidak lagi mau berlangganan atau membeli produk. Churn rate pada umumnya dihitung pada rentang waktu spesifik tertentu seperti per bulan, kuartal, dan tahunan.Singkatnya, churn rate adalah tingkat retensi pelanggan. Saat kita dapat melakukan prediksi dengan metode yang tepat. Salah satunya adalah dengan menerapkan machine learning. Saya rasa kita dapat terbantu untuk setidaknya mengantisipasi tingkat churn yang meningkat dengan memanfaatkan fitur-fitur yang ada.Berdasarkan hal tersebut, saya berinisiatif melakukan penelitian tentang Klasifikasi tingkat Churn dari Customer suatu perusahaan Telekomunikasi.
+Dalam dunia bisnis, mendapatkan pelanggan baru cukuplah sulit lagipun menghabiskan biaya yang lebih mahal daripada mempertahankan pelanggan yang sudah ada. Mengapa? karena ketika mencari pelanggan baru maka perlu menghabiskan banyak  waktu dan biaya lagi untuk memikat hati calon pelanggan yang tentu saja belum pasti akan membuahkan hasil. Dalam penelitian yang dilakukan oleh Frederick Reichheld dari Bain & Company yang menunjukkan peningkatan tingkat penahanan pelanggan sebesar 5% meningkatkan keuntungan sebesar 25% hingga 95%. Sederhananya mempertahankan pelanggan yang tepat itu berharga. Salah satu metrik utama dalam memahami apakah perusahaan mempertahankan pelanggan adalah tingkat _customer churn rate_. _Churn rate_ secara definisi diartikan sebagai hitungan persentase pelanggan atau pembeli yang tidak lagi mau berlangganan atau membeli produk. _Churn rate_ pada umumnya dihitung pada rentang waktu spesifik tertentu seperti per bulan, kuartal, dan tahunan.Singkatnya, _churn rate_ adalah tingkat retensi pelanggan. Saat kita dapat melakukan prediksi dengan metode yang tepat. Salah satunya adalah dengan menerapkan _machine learning_. Saya rasa kita dapat terbantu untuk setidaknya mengantisipasi tingkat _churn_ yang meningkat dengan memanfaatkan fitur-fitur yang ada.Berdasarkan hal tersebut, saya berinisiatif melakukan penelitian tentang klasifikasi tingkat _churn_ dari pelanggan suatu perusahaan Telekomunikasi.
 
 ## **Business Understanding**
 ### **Problem Statement**
@@ -51,7 +51,7 @@ Dataset yang digunakan pada proyek ini yaitu dataset lengkap dengan riwayat cust
 Setelah dilakukan analisa pada data, didapatkan informasi bahwa:
 
 * Format dataset yaitu CSV (Comma-Seperated Values)
-* Jumlah kolom data yang terdapat didalam dataset berjumla 20 kolom
+* Jumlah kolom data yang terdapat didalam dataset berjumlah 20 kolom
 * Dataset berdimensi 7043 baris dan 20 kolom
 * Terdapat 18 kolom data yang memiliki tipe data object 
 * Terdapat 1 kolom data yang memiliki tipe data float64
@@ -66,19 +66,46 @@ Kumpulan data mencakup informasi tentang:
 * Informasi akun pelanggan - seperti contract, payment method, paperless billing, monthly charges, and total charges
 * Info demografis tentang pelanggan – gender, tenure, lalu Partner, Dependents
 
-Kita akan mengambil salah satu sampel data numeriknya, di program akan ditampilkan tidak ada nilai yang outlier
+Untuk penjelasan mengenai variabel-variabel pada dataset dapat dilihat pada poin-poin berikut ini:
+* customerID           : Id dari customer
+* gender               : Jenis kelamin dari masing-masing customer
+* SeniorCitizen        : Warga senior berdasar akun pelanggan
+* Partner              : info demografis memiliki pasangan atau tidak
+* Dependents           : info demografis memiliki tanggungan atau tidak
+* tenure               : Pelanggan tetap atau tidak dari waktu ke waktu
+* PhoneService         : Menggunakan layanan service telepon
+* MultipleLines        : Baris apa saja layanan yang digunakan
+* InternetService      : Menggunakan layanan service internet
+* OnlineSecurity       : Menggunakan layanan service keamanan online
+* OnlineBackup         : Menggunakan layanan service backup online
+* DeviceProtection     : Menggunakan layanan service proteksi perangkat
+* TechSupport          : Menggunakan layanan service tech support
+* StreamingTV          : Menggunakan layanan streaming tv
+* StreamingMovies      : Menggunakan layanan streaming movies
+* Contract             : Durasi kontrak
+* PaperlessBilling     : Tagihan tanpa kertas
+* PaymentMethod        : Layanan metode pembayaran yang dilakukan
+* MonthlyCharges       : Biaya bulanan yang dikeluarkan
+* TotalCharges         : Total seluruh biaya yang dikeluarkan
+* Churn                : Customer melakukan churn atau tidak
+
+Kita akan mengambil salah satu sampel data numeriknya, di program akan ditampilkan tidak ada nilai yang outlier<br>
+
 <image src='https://github.com/RidwendDev/Customer-Churn-Classification/blob/main/Visualizations/out.png?raw=true'>
    
 Karena terdapat nilai missing value pada kolom Total charges kita akan melakukan imputation, untuk itu sebelumnya kita akan lihat distribusi datanya agar dapat memilih metode yang terbaik.<br>
+   
    <img src='https://github.com/RidwendDev/Customer-Churn-Classification/blob/main/Visualizations/hist%20total.png?raw=true'>
 
 Dari grafik  terlihat bahwa distribusi skewness sehingga akan kita lakukan imputation dengan metode median. 
     
 ## Analisis Univariat dan Multivariat
-Baik kita akan mulai fokus menganalisis korelasi data pada feature-feature baik numerik maupun kategorik terhadap target kita(Churn). Untuk lebih lengkapnya dapat dilihat pada kode programnya, karena disini hanya akan menggambarkan sedikit pattern yang cukup menarik.
+Baik kita akan mulai fokus menganalisis korelasi data pada feature-feature baik numerik maupun kategorik terhadap target kita(Churn). Untuk lebih lengkapnya dapat dilihat pada kode programnya, karena disini hanya akan menggambarkan sedikit pattern yang cukup menarik.<br>
+   
    <img src='https://github.com/RidwendDev/Customer-Churn-Classification/blob/main/Visualizations/corr%20numer.png?raw=true'>
    <img src='https://github.com/RidwendDev/Customer-Churn-Classification/blob/main/Visualizations/paymet.png?raw=true'>
-   * Dapat dilihat dari grafik customer yang churn(pindah) dengan tingkat presentase terttnggi adalah yang menggunakan Elektronik check sebagai Metode Pembayaran.
+   
+   * Dapat dilihat dari grafik customer yang churn(pindah) dengan tingkat presentase tertinggi adalah yang menggunakan Elektronik check sebagai Metode Pembayaran.
    * Pelanggan yang memilih mailed check,bank transfer, credit card(automatic) sebagai Metode Pembayaran cenderung tidak pindah.
    
    <img src='https://github.com/RidwendDev/Customer-Churn-Classification/blob/main/Visualizations/depen.png?raw=true'>
